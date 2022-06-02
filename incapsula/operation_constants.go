@@ -103,3 +103,10 @@ const CreateNotificationCenterPolicy = "create_notification_center_policy"
 const ReadNotificationCenterPolicy = "read_notification_center_policy"
 const UpdateNotificationCenterPolicy = "update_notification_center_policy"
 const DeleteNotificationCenterPolicy = "delete_notification_center_policy"
+
+const ReadABPAccount = "read_abp_account"
+
+const ReadABPSite = "read_abp_site"
+const UpdateABPSite = "update_abp_site"
+const CreateABPSite = "create_abp_site"
+const DeleteABPSite = "delete_abp_site"

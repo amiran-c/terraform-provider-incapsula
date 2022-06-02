@@ -106,6 +106,8 @@ func Provider() *schema.Provider {
 			"incapsula_notification_center_policy":   resourceNotificationCenterPolicy(),
 			"incapsula_csp_site_configuration":       resourceCSPSiteConfiguration(),
 			"incapsula_csp_site_domain":              resourceCSPSiteDomain(),
+			"incapsula_abp_account":                  resourceABPAccount(),
+			"incapsula_abp_site":                     resourceABPSite(),
 		},
 	}
 
