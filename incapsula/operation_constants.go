@@ -110,3 +110,13 @@ const ReadABPSite = "read_abp_site"
 const UpdateABPSite = "update_abp_site"
 const CreateABPSite = "create_abp_site"
 const DeleteABPSite = "delete_abp_site"
+
+const ReadABPPolicy = "read_abp_policy"
+const UpdateABPPolicy = "update_abp_policy"
+const CreateABPPolicy = "create_abp_policy"
+const DeleteABPPolicy = "delete_abp_policy"
+
+const ReadABPDomain = "read_abp_domain"
+const UpdateABPDomain = "update_abp_domain"
+const CreateABPDomain = "create_abp_domain"
+const DeleteABPDomain = "delete_abp_domain"

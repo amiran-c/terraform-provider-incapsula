@@ -108,6 +108,7 @@ func Provider() *schema.Provider {
 			"incapsula_csp_site_domain":              resourceCSPSiteDomain(),
 			"incapsula_abp_account":                  resourceABPAccount(),
 			"incapsula_abp_site":                     resourceABPSite(),
+			"incapsula_abp_policy":                   resourceABPPolicy(),
 		},
 	}
 

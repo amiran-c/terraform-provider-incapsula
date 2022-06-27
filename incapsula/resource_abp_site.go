@@ -18,9 +18,9 @@ func resourceABPSite() *schema.Resource {
 			State: func(d *schema.ResourceData, meta interface{}) ([]*schema.ResourceData, error) {
 				keyParts := strings.Split(d.Id(), "-")
 				if len(keyParts) == 5 {
-					return importResourcesByID(d, meta.(*Client))
+					return importABPSiteResourcesByID(d, meta.(*Client))
 				} else {
-					return importResourcesByName(d, meta.(*Client))
+					return importABPSiteResourcesByName(d, meta.(*Client))
 				}
 			},
 		},
@@ -84,19 +84,19 @@ func resourceABPSite() *schema.Resource {
 	}
 }
 
-func importResourcesByID(d *schema.ResourceData, client *Client) ([]*schema.ResourceData, error) {
+func importABPSiteResourcesByID(d *schema.ResourceData, client *Client) ([]*schema.ResourceData, error) {
 	if _, err := client.GetABPSite(d.Id()); err == nil {
 		return []*schema.ResourceData{d}, nil
 	}
 	return nil, fmt.Errorf("ABP site ID %s not found, can't import", d.Id())
 }
 
-func importResourcesByName(d *schema.ResourceData, client *Client) ([]*schema.ResourceData, error) {
+func importABPSiteResourcesByName(d *schema.ResourceData, client *Client) ([]*schema.ResourceData, error) {
 	// Save the site name from the ID to use later for finding the sites
 	siteName := d.Id()
 	found := false
 
-	sites, err := client.GetABPSitesForAccountWithoutID()
+	sites, err := client.GetABPPoliciesForAccountWithoutID()
 	if err != nil {
 		return nil, err
 	}
@@ -206,6 +206,7 @@ func resourceABPSiteUpdate(d *schema.ResourceData, m interface{}) error {
 	ID := d.Id()
 	var site ABPUpdateSite
 	fillABPSiteData(d, &site)
+	d.GetRawPlan()
 
 	log.Printf("[DEBUG] ABP update site, created site for request: %v", site)
 

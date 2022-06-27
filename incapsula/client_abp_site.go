@@ -59,7 +59,7 @@ func (c *Client) GetABPSite(siteID string) (*ABPSiteResponse, error) {
 	log.Printf("[INFO] Getting ABP site ID: %s\n", siteID)
 
 	if len(siteID) == 0 {
-		return nil, fmt.Errorf("Cant' fetch empty site ID")
+		return nil, fmt.Errorf("can't fetch empty site ID")
 	}
 
 	resp, err := c.DoJsonRequestWithHeaders(http.MethodGet,
